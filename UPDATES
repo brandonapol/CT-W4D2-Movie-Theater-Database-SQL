@@ -1,0 +1,10 @@
+UPDATE customer
+SET first_name = 'Abner'
+WHERE first_name = 'Ryan'
+
+UPDATE customer
+SET last_name = 'The Amish Movie Critic \U0001f525'
+WHERE last_name = 'Rhioaudes'
+
+SELECT *
+from customer

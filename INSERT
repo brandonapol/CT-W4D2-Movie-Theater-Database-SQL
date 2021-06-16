@@ -1,0 +1,53 @@
+-- Inserts into created tables
+INSERT INTO customer(
+	customer_id,
+	first_name,
+	last_name,
+	phone
+)VALUES(
+	5,
+	'Ryan',
+	'Rhioaudes',
+	12345678901
+);
+
+INSERT INTO movie(
+	movie_id,
+	movie_title,
+	movie_time,
+	actors,
+	ticket_price
+)VALUES(
+	2,
+	'Terrell: the Last Power Ranger',
+	'04:05',
+	'Joel Carter',
+	0000
+);
+
+INSERT INTO ticket(
+	ticket_id,
+	movie_id,
+	seat,
+	customer_id
+)VALUES(
+	3,
+	2,
+	62,
+	5
+);
+
+INSERT INTO concessions(
+	order_number,
+	customer_id,
+	items_ordered,
+	sale_total
+)VALUES(
+	1,
+	5,
+	'Large Popcorn and a Large Coke',
+	5.50
+);
+
+
+

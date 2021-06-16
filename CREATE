@@ -1,0 +1,37 @@
+-- Create Table for customer
+CREATE TABLE customer(
+	customer_id SERIAL PRIMARY KEY,
+	first_name VARCHAR(100),
+	last_name VARCHAR(150),
+	phone NUMERIC(11)
+);
+
+-- Create Table for movie data
+CREATE TABLE movie(
+	movie_id SERIAL PRIMARY KEY,
+	movie_title VARCHAR(50),
+	movie_time TIME,
+	actors VARCHAR(50),
+	ticket_price NUMERIC(2,2)
+);
+
+-- Create table for ticket information
+CREATE TABLE ticket(
+	ticket_id SERIAL PRIMARY KEY,
+	movie_id INTEGER NOT NULL,
+	seat INTEGER,
+	customer_id INTEGER NOT NULL,
+	FOREIGN KEY(movie_id) REFERENCES movie(movie_id),
+	FOREIGN KEY(customer_id) REFERENCES customer(customer_id)
+);
+
+-- Create table for Concessions sales per sale
+-- Will not allow for 4-figure concessions sales because overpriced 
+-- theater food is peak cronyism and is a localized monopoly so mine will be affordable
+CREATE TABLE concessions(
+	order_number SERIAL PRIMARY KEY,
+	customer_id INTEGER NOT NULL,
+	items_ordered VARCHAR(50),
+	sale_total NUMERIC(3,2),
+	FOREIGN KEY(customer_id) REFERENCES customer(customer_id)
+);
